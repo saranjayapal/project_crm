@@ -48,9 +48,7 @@ class CompaniesController extends Controller
        $input = $request->all();
   
         if ($logo = $request->file('logo')) {
-            //$destinationPath = public_path().'/storage/';
             $logoImage = date('YmdHis') . "." . $logo->getClientOriginalExtension();
-            //$logo->move($destinationPath, $logoImage);
             $path = $request->file('logo')->storeAs('public/', $logoImage); //stores image in storage/app/public and symlink created to link to public/storage
             $input['logo'] = $logoImage;
         }
@@ -108,9 +106,7 @@ class CompaniesController extends Controller
         $company->website = $request->website;
   
         if ($logo = $request->file('logo')) {
-            //$destinationPath = public_path().'/storage/';
             $logoImage = date('YmdHis') . "." . $logo->getClientOriginalExtension();
-            //$logo->move($destinationPath, $logoImage);
             $path = $request->file('logo')->storeAs('public/', $logoImage); //stores image in storage/app/public and symlink created to link to public/storage
             $company->logo = $logoImage;
             

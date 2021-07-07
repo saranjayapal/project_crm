@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//create symlink - storage/app/public folder => public/storage
+Route::get('/create_symlink', function () {
+    Artisan::call('storage:link');
+});
 //Auth::routes();
 //disable register 
 Auth::routes(['register' => false]);

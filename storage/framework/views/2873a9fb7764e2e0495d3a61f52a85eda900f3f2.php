@@ -31,7 +31,7 @@
       <td scope="row"><?php echo e(($employees->currentpage()-1) * $employees->perpage() + $loop->index + 1); ?></td>
       <td><?php echo e($employee->firstname); ?></td>
       <td><?php echo e($employee->lastname); ?></td>
-      <td><?php echo e($employee->company_id); ?></td>
+      <td><?php echo e($employee->company_name); ?></td>
       <td><?php echo e($employee->email); ?></td>
       <td><?php echo e($employee->phone); ?></td>
       <td><a class="btn btn-primary btn-raised btn-sm" href=" <?php echo e(route('employees_edit',$employee->id)); ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>

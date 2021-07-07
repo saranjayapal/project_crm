@@ -13,6 +13,8 @@ class Companies extends Model
         'name','email','logo','website'
     ];
 
+    
+
 }
 
 

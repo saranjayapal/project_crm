@@ -30,7 +30,7 @@
       <td scope="row">{{ ($employees->currentpage()-1) * $employees->perpage() + $loop->index + 1 }}</td>
       <td>{{ $employee->firstname }}</td>
       <td>{{ $employee->lastname }}</td>
-      <td>{{ $employee->company_id }}</td>
+      <td>{{ $employee->company_name }}</td>
       <td>{{ $employee->email }}</td>
       <td>{{ $employee->phone }}</td>
       <td><a class="btn btn-primary btn-raised btn-sm" href=" {{ route('employees_edit',$employee->id) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>

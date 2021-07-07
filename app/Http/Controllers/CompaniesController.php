@@ -15,7 +15,7 @@ class CompaniesController extends Controller
     public function index()
     {
         //
-        $companies = Companies::paginate(10);
+        $companies = Companies::simplePaginate(10);
         return view('companies.index',compact('companies'));
     }
 
@@ -130,7 +130,7 @@ class CompaniesController extends Controller
     public function destroy($id)
     {
         $company = Companies::find($id);
-
+        //delete the logo
         if(!is_null($company->logo))
         {
             unlink(storage_path('app/public/'.$company->logo));

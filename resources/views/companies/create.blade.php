@@ -1,0 +1,43 @@
+
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+  <h4 class="heading">Create Company</h4>
+  @if ($errors->any())
+     @foreach ($errors->all() as $error)
+         <div class="alert alert-danger" role="alert">{{$error}}</div>
+     @endforeach
+ @endif
+  <form id="companyform" action="{{route('companies_store')}}" method="POST" enctype="multipart/form-data">
+  {{csrf_field()}}
+ 
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="company_name">Name *</label>
+      <input type="text" class="form-control" id="name" name="name" value="" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" name="email" value="" >
+    </div>
+     </div>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="logo">Logo</label>
+      <input type="file" class="form-control" name="logo" id="logo" >
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="website">Website</label>
+      
+      <input type="text" class="form-control" id="website" name="website">
+      </select>
+    </div>
+    </div>
+  <div class="form-group">
+    
+  <button class="btn btn-primary" type="submit">Save</button>
+  <button class="btn btn-primary" type="submit" onClick="javascript:history.go(-1);">Cancel</button>
+</form>
+</div>
+@endsection
